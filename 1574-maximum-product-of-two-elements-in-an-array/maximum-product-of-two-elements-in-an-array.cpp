@@ -1,14 +1,13 @@
 class Solution {
 public:
     int maxProduct(vector<int>& nums) {
-        int n=nums.size();
-     for(int i=0;i<n;i++){
-        for(int j=i+1;j<n;j++){
-        if(nums[i]>nums[j]){
-            swap(nums[i],nums[j]);
-        }
-     }}
-      int result=(nums[n-2]-1)*(nums[n-1]-1);
-      return result;  
+        
+        std::priority_queue<int> pq(nums.begin() , nums.end());
+     
+            int i=pq.top();
+            pq.pop();
+            int j=pq.top();
+        
+        return (i-1)*(j-1);
     }
 };
