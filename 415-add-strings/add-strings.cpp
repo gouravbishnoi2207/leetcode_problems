@@ -18,9 +18,9 @@ public:
           j--;
           }
           carry=sum/10;
-         ns=ns+to_string(sum%10);
+         ns.push_back('0'+(sum%10));
        }
-       std::reverse(ns.begin(),ns.end());
+       reverse(ns.begin(),ns.end());
        return ns;
     }
 };
